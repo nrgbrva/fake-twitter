@@ -5,14 +5,14 @@ import './App.css'
 import { ReplyIcon, RetweetIcon, LikeIcon, ShareIcon, VerifiedIcon } from './assets/icons'
 // import { AvatarLoader } from './loader.jsx';
 function App() {
-  const [name, setName] = useState();
-  const [username, setUsername] = useState();
+  const [name, setName] = useState('anonymous');
+  const [username, setUsername] = useState('anonymous');
   const [isVerified, setIsVerified] = useState(true);
-  const [tweet, setTweet] = useState();
-  const [avatar, setAvatar] = useState();
-  const [retweets, setRetweets] = useState();
-  const [quoteTweets, setQuoteTweets] = useState();
-  const [likes, setLikes] = useState();
+  const [tweet, setTweet] = useState(0);
+  const [avatar, setAvatar] = useState(null);
+  const [retweets, setRetweets] = useState(0);
+  const [quoteTweets, setQuoteTweets] = useState(0);
+  const [likes, setLikes] = useState(0);
   const [theme, setTheme] = useState('light');
   const [isShown, setIsShown] = useState(false);
   const showContext = event => {
@@ -22,6 +22,16 @@ function App() {
     // 👇️ or simply set it to true
     // setIsShown(true);
   };
+  let comment=()=>{
+    setQuoteTweets(Number(quoteTweets)+1)
+    
+  }
+  let arrow=()=>{
+    setRetweets(Number(retweets)+1)
+  }
+  let liked=()=>{
+    setLikes(Number(likes)+1)
+  }
   let x = "./download.jpg"
   // const [image, takeScreenshot] = useScreenshot();
   const tweetFormat = tweet => {
@@ -74,25 +84,25 @@ const toggleTheme = () => {
         </div>
         <div className="tweet-stats">
           <span>
-            <b>{retweets || 0} </b> retweet </span>
+            <b>{retweets||comment } </b> retweet </span>
           <span>
-            <b>{quoteTweets || 0} </b> quotations </span>
+            <b>{quoteTweets ||arrow} </b> quotations </span>
           <span>
-            <b>{likes || 0}</b> like </span>
+            <b>{likes ||liked}</b> likes </span>
         </div>
         <div className="tweet-actions">
-          <span>
+          <button onClick={comment}>
             <ReplyIcon />
-          </span>
-          <span>
+          </button>
+          <button onClick={arrow}>
             <RetweetIcon />
-          </span>
-          <span>
+          </button>
+          <button onClick={liked}>
             <LikeIcon />
-          </span>
-          <span>
+          </button>
+          <button>
             <ShareIcon />
-          </span>
+          </button>
         </div>
           
       </div>

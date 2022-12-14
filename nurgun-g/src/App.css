@@ -92,6 +92,9 @@ img{
   align-items: center;
   justify-content: space-around;
 }
+.tweet-actions button{
+  background: transparent;
+}
 .name{
   display: flex;
   align-items: center;
@@ -147,7 +150,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.tweet-content span{
+.tweet-content button{
+  
   color: rgb(116, 116, 191);
 }
 #sub{
@@ -173,5 +177,5 @@ input::-webkit-inner-spin-button {
  }
 
 #theme{
-  background-color: red;
+  background-color: rgb(143, 204, 236);
 }

@@ -9,8 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 html, body {
+  font-size: 10px;
   height: 100%;
-  background: #000;
+  /* background: #000; */
 }
 svg{
   cursor: pointer;
@@ -25,70 +26,69 @@ svg:hover{
   align-items: center;
 }
 .tweet-container{
-  transform: translate(25%);
+  
   display: flex;
-  justify-content: space-around;
-  flex-direction: row-reverse;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
   
 
 }
 .tweet{
   height: fit-content;
   border: 1px solid gray;
-  width: 600px;
-  margin: 25px auto;
-  padding: 0 16px;
-  transform: translate(25%);
+  width: 60rem;
+  margin: 2.5rem auto;
+  padding: 0 1.6rem;
+  
 }
 .tweet-author{
-  height: 48px;
-  margin-top: 12px;
+  height: 4.8rem;
+  margin-top: 1.2rem;
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
-  font-size: 15px;
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
 }
 img{
-  width: 48px;
-  margin-right: 12px;
+  width: 4.8rem;
+  margin-right: 1.2rem;
   border: 50%;
 }
 .name{
-  color: white;
-  font-weight: 700px;
+  /* color: white; */
+  font-weight: 70rem;
 }
 .username{
 
   color:gray
 }
 .tweet-content{
-  padding-top: 12px;
+  padding-top: 1.2rem;
 }
 .tweet-content p{
-      font-size: 23px;
-      line-height: 28px;
-      color: #fff;
+      font-size: 2.3rem;
+      line-height: 2.8rem;
+      /* color: #fff; */
       overflow: hidden;
 }
 .tweet-stats{
-  height: 53px;
+  height: 5.3rem;
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 1.5rem;
     color: #6e767d;
-    border-top: 1px solid #2f3336;
+    border-top: 0.1rem solid #2f3336;
 }
-.tweet-stats b{
-  color: white;
-}
+
 .tweet-stats span:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 .tweet-actions {
-  height: 48px;
+  height: 4.8rem;
   display: flex;
-  border-top: 1px solid #2f3336;
-  color: #fff;
+  border-top: 0.1rem solid #2f3336;
+  /* color: #fff; */
   align-items: center;
   justify-content: space-around;
 }
@@ -97,30 +97,31 @@ img{
   align-items: center;
 }
 .name svg{
-  margin-left: 5px;
+  margin-left: 0.5rem;
 }
 .tweet-settings{
-  color: white;
+  padding: 0 1rem;
+  /* color: white; */
 }
 label {
-  font-size: 15px;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
   display: block;
   color: #6e767d;
 }
 li:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 h1{
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 input {
   width: 100%;
   background: transparent;
-  border-bottom: 1px solid #2f3336;
-  color: #fff;
-  padding: 10px 0 15px;
-  font-size: 15px;
+  border-bottom: 0.1rem solid #2f3336;
+  
+  padding: 1rem 0 1.5rem;
+  font-size: 1.5rem;
  
 }
 input:focus,input:hover{
@@ -130,9 +131,9 @@ textarea {
   width: 100%;
   background: transparent;
   border-bottom: 1px solid #2f3336;
-  color: #fff;
-  padding: 10px 0 15px;
-  font-size: 15px;
+  /* color: #fff; */
+  padding: 1rem 0 1.5rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   resize: none;
 
@@ -151,8 +152,26 @@ input::-webkit-inner-spin-button {
 }
 #sub{
   background-color: #5598d3;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 #sub p{
   text-orientation:upright;
+}
+.dark {
+  background-color: #000;
+  color: #fff !important;
+ }
+ .dark input{
+  color: white !important;
+ }
+ .dark textarea{
+  color: white;
+ }
+ .light {
+  background-color: #fff;
+  color: black !important;
+ }
+
+#theme{
+  background-color: red;
 }

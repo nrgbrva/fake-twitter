@@ -1,6 +1,6 @@
 import { createRef,useState } from 'react'
 // import { useScreenshot } from 'use-react-screenshot'
-
+import Examples from './Examples';
 import './App.css'
 import { ReplyIcon, RetweetIcon, LikeIcon, ShareIcon, VerifiedIcon } from './assets/icons'
 // import { AvatarLoader } from './loader.jsx';
@@ -13,6 +13,15 @@ function App() {
   const [retweets, setRetweets] = useState();
   const [quoteTweets, setQuoteTweets] = useState();
   const [likes, setLikes] = useState();
+  const [theme, setTheme] = useState('light');
+  const [isShown, setIsShown] = useState(false);
+  const showContext = event => {
+    // 👇️ toggle shown state
+    setIsShown(current => !current);
+
+    // 👇️ or simply set it to true
+    // setIsShown(true);
+  };
   let x = "./download.jpg"
   // const [image, takeScreenshot] = useScreenshot();
   const tweetFormat = tweet => {
@@ -28,11 +37,22 @@ function App() {
     console.log(e.target.files);
     setAvatar(URL.createObjectURL(e.target.files[0]));
 }
+const toggleTheme = () => {
+    if (theme === 'light') {
+     setTheme('dark');
+      document.body.style.background='black'
+    } else {
+     setTheme('light');
+  document.body.style.background='white'
+
+    }
+   };
   // const ref = createRef(null)
   // const [image, takeScreenshot] = useScreenshot()
   // const getImage = () => takeScreenshot(ref.current)
   return (
-    <div className="tweet-container">
+    <div className={`tweet-container ${theme}`}>
+      <button id='theme' onClick={toggleTheme}>Toggle Theme</button>
       <div className="tweet">
         <div className="tweet-author">{
           <img src={avatar ||x} alt="ss" />
@@ -56,7 +76,7 @@ function App() {
           <span>
             <b>{retweets || 0} </b> retweet </span>
           <span>
-            <b>{quoteTweets || 0} </b> alinti </span>
+            <b>{quoteTweets || 0} </b> quotations </span>
           <span>
             <b>{likes || 0}</b> like </span>
         </div>
@@ -74,10 +94,11 @@ function App() {
             <ShareIcon />
           </span>
         </div>
-
+          
       </div>
-      <div id='sub' ></div>
-      <div className="tweet-settings">
+      <button onClick={showContext}>edit</button>
+      {isShown && (
+        <div className="tweet-settings">
         <h1>Tweet settings</h1>
         <ul>
           <li>
@@ -143,6 +164,10 @@ function App() {
 
         </ul>
       </div>
+      )}
+      <div id='sub' ></div>
+      {/* <Examples/> */}
+      
     </div>
   )
 }

@@ -15,6 +15,7 @@ function Twt() {
   const [likes, setLikes] = useState(0);
   const [theme, setTheme] = useState('light');
   const [isShown, setIsShown] = useState(false);
+  
   const showContext = event => {
     // 👇️ toggle shown state
     setIsShown(current => !current);
@@ -22,15 +23,18 @@ function Twt() {
     // 👇️ or simply set it to true
     // setIsShown(true);
   };
-  let comment=()=>{
-    setQuoteTweets(Number(quoteTweets)+1)
+  let comment=(event)=>{
+    setQuoteTweets(Number(quoteTweets)==0 && Number(quoteTweets)+1)
+    event.currentTarget.disabled = true;
     
   }
-  let arrow=()=>{
-    setRetweets(Number(retweets)+1)
+  let arrow=(event)=>{
+    setRetweets(Number(retweets)==0 && Number(retweets)+1)
+    event.currentTarget.disabled = true;
   }
-  let liked=()=>{
-    setLikes(Number(likes)+1)
+  let liked=(event)=>{
+    setLikes(Number(likes)==0 && Number(likes)+1)
+    event.currentTarget.disabled = true;
   }
   let x = "./download.jpg"
   // const [image, takeScreenshot] = useScreenshot();
@@ -50,10 +54,10 @@ function Twt() {
 const toggleTheme = () => {
     if (theme === 'light') {
      setTheme('dark');
-      document.body.style.background='black'
+      document.body.style.background='gray'
     } else {
      setTheme('light');
-  document.body.style.background='white'
+  document.body.style.background='wheat'
 
     }
    };
@@ -106,7 +110,7 @@ const toggleTheme = () => {
         </div>
           
       </div>
-      <button onClick={showContext}>edit</button>
+      <button className='edit' onClick={showContext}>edit</button>
       {isShown && (
         <div className="tweet-settings">
         <h1>Tweet settings</h1>
@@ -175,8 +179,8 @@ const toggleTheme = () => {
         </ul>
       </div>
       )}
-      <div id='sub' ></div>
-      {/* <Examples/> */}
+      
+      
       
     </div>
   )

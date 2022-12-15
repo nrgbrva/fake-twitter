@@ -24,6 +24,10 @@ html, body {
   width: 100vw;
   height: 10vh;
   font-size: 2rem;
+  
+}
+#ss{
+  background-color: transparent;
 }
 svg{
   cursor: pointer;
@@ -156,12 +160,40 @@ textarea {
 textarea:focus{
   border-color: #4e555a;
 }
+img{
+  border-radius: 50%;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.light .tweet{
+  background: linear-gradient(96.27deg, #FFFFFF 15.49%, rgba(255, 255, 255, 0.78) 78.18%, rgba(255, 255, 255, 0.58) 100%);
+border: 1px solid #FFFFFF;
+backdrop-filter: blur(2px);
+}
+.tweet{
+  border-radius: 2rem;
+}
+.dark .tweet{
+  background: linear-gradient(276.34deg, rgba(0, 0, 0, 0.73) 14.69%, rgba(0, 0, 0, 0.57) 77.97%, rgba(0, 0, 0, 0.43) 100%);
+border: 1px solid #FFFFFF;
+backdrop-filter: blur(2px);
+}
+.dark .tweet-stats span{
+  color: #fff;
+}
+.dark svg{
+  fill: white;
+}
+.dark svg:hover{
+  fill: red;
+}
 
+.dark label{
+  color: black;
+}
 .tweet-content button{
   
   color: rgb(116, 116, 191);
@@ -173,8 +205,9 @@ input::-webkit-inner-spin-button {
 #sub p{
   text-orientation:upright;
 }
+
 .dark {
-  background-color: #000;
+  
   color: #fff !important;
  }
  .dark input{
@@ -184,8 +217,14 @@ input::-webkit-inner-spin-button {
   color: white;
  }
  .light {
-  background-color: #fff;
+  
   color: black !important;
+ }
+.edit{
+  background-color:#2f3336 !important;
+  border-radius: 2rem;
+  color: white;
+  font-size: 2rem;
  }
  #basic-navbar-nav > div > a{
   color: white;
@@ -205,4 +244,7 @@ button{
 }
 h1{
   padding: 20px;
+}
+.dark .tweet-stats{
+  color: black;
 }

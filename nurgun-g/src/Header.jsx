@@ -9,10 +9,12 @@ function x() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">
-             Fake Twitter
+             Twitter
             </Nav.Link>
-
-
+            <Nav.Link href="#home">
+             <button id='ss' >Screenshot</button>
+            </Nav.Link>
+      
           </Nav>
         </Navbar.Collapse>
       </Container>

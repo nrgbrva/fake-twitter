@@ -10,11 +10,7 @@ function x() {
           <Nav className="me-auto">
             <Nav.Link href="#home">
              Twitter
-            </Nav.Link>
-            <Nav.Link href="#home">
-             <button id='ss' >Screenshot</button>
-            </Nav.Link>
-      
+            </Nav.Link>      
           </Nav>
         </Navbar.Collapse>
       </Container>

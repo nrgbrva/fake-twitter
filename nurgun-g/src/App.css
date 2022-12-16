@@ -12,7 +12,7 @@
 html, body {
   font-size: 10px;
   height: 100%;
-  /* background: #000; */
+ 
 }
 .twitter{
   margin: auto;
@@ -27,8 +27,11 @@ html, body {
   
 }
 #ss{
-  background-color: transparent;
+  background-color: rgb(138, 138, 180);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
+
 svg{
   cursor: pointer;
 }
@@ -40,11 +43,15 @@ svg:hover{
   height: 100%;
  
 }
+#theme{
+ background-color: transparent;
+}
 .tweet-container{
   
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  
   margin: auto;
   
 
@@ -173,6 +180,10 @@ input::-webkit-inner-spin-button {
 border: 1px solid #FFFFFF;
 backdrop-filter: blur(2px);
 }
+.navbar-nav{
+  align-items: center;
+  gap: 10rem;
+}
 .tweet{
   border-radius: 2rem;
 }
@@ -221,21 +232,16 @@ backdrop-filter: blur(2px);
   color: black !important;
  }
 .edit{
-  background-color:#2f3336 !important;
+  background-color:transparent;
   border-radius: 2rem;
-  color: white;
+  color: gray;
   font-size: 2rem;
  }
  #basic-navbar-nav > div > a{
   color: white;
   font-weight: bold;
  }
-#theme{
-  background-color: rgb(143, 204, 236);
-  border-radius: 5rem;
-  height: 5rem;
-  font-size: 2rem;
-}
+
 #root > div > div > button:nth-child(3){
   height: 5rem;
 }
@@ -247,4 +253,18 @@ h1{
 }
 .dark .tweet-stats{
   color: black;
+}
+.light .tweet{
+  border: 1px solid gray;
+}
+.tweet-content .xt{
+  color: rebeccapurple !important;
+}
+#save{
+  background-color: transparent;
+}
+.tools{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

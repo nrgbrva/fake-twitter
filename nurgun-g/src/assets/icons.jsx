@@ -15,7 +15,51 @@ const ReplyIcon = ({ color, width, height }) => {
     </svg>
   );
 };
-
+const Save = ({ color, width, height }) => {
+  return (
+    <svg
+      fill={color || '#6e767d'}
+      width={width || 24}
+      height={height || 24}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <g>
+      <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/> 
+      </g>
+    </svg>
+  );
+};
+const Sun = ({ color, width, height }) => {
+  return (
+    <svg
+      fill={'gray' || '#6e767d'}
+      width={width || 24}
+      height={height || 24}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <g>
+      <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </g>
+    </svg>
+  )
+}
+const Pen = ({ color, width, height }) => {
+  return (
+    <svg
+      fill={'gray' || '#6e767d'}
+      width={width || 24}
+      height={height || 24}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <g>
+      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+      </g>
+    </svg>
+  )
+}
 const RetweetIcon = ({ color, width, height }) => {
   return (
     <svg
@@ -80,4 +124,4 @@ const VerifiedIcon = ({ color, width, height }) => {
   );
 };
 
-export { ReplyIcon, RetweetIcon, LikeIcon, ShareIcon, VerifiedIcon };
+export { ReplyIcon, RetweetIcon, LikeIcon, ShareIcon, VerifiedIcon,Sun,Pen,Save };

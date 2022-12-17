@@ -1,7 +1,7 @@
 import { createRef, useState } from 'react'
 import './App.css'
 import { useScreenshot, createFileName } from "use-react-screenshot";
-import { ReplyIcon, RetweetIcon, LikeIcon, ShareIcon, VerifiedIcon, Sun, Pen, Save } from './assets/icons'
+import { ReplyIcon, RetweetIcon, LikeIcon, ShareIcon, VerifiedIcon, Sun, Pen, Save, TwitterIcon } from './assets/icons'
 function Twt() {
   const [name, setName] = useState('anonymous');
   const [username, setUsername] = useState('anonymous');
@@ -31,12 +31,14 @@ function Twt() {
     setIsShown(current => !current);
   };
   let comment = (event) => {
-    setQuoteTweets(Number(quoteTweets) == 0 && Number(quoteTweets) + 1)
-    // let t_container=document.querySelector('.tweet')
-    // let tw=document.querySelector('.twitter')
-    // tw.append(t_container)
+    setQuoteTweets(Number(quoteTweets) == 0 && Number(quoteTweets) + 1);
 
 
+  }
+  let reply = (event) => {
+    let toadd2 = document.querySelector('.tweet');
+    let toadd = document.querySelector('.tweet');
+    toadd2.append(toadd)
   }
   let arrow = (event) => {
     setRetweets(Number(retweets) == 0 && Number(retweets) + 1)
@@ -55,35 +57,53 @@ function Twt() {
     return tweet;
   };
 
+
+
   function avatarHandle(e) {
     console.log(e.target.files);
     setAvatar(URL.createObjectURL(e.target.files[0]));
   }
+  function replied() {
+    let b = document.querySelector('.reply')
+    console.log(b)
+    b.classList.toggle('hid')
+
+  }
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
-      document.body.style.background = 'gray'
+      document.body.style.background = 'linear-gradient(to bottom, rgba(0,1,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,1) 100%)';
     } else {
       setTheme('light');
-      document.body.style.background = 'white'
-
+      document.body.style.background = 'aliceblue'
     }
   };
   return (
     <div className={`tweet-container ${theme}`} id='photo'>
-      
-      <div className="tweet" ref={ref}>
-        <div className="tweet-author">{
-          <img src={avatar || x} alt="ss" />
-        }
 
+      <div className="tweet" ref={ref}>
+        <div className="tweet-author">
+          <div>
+            {
+              <img src={avatar || x} alt="ss" />
+            }
+          </div>
           <div>
             <div className="name">{name || 'nurgun'}
-              {isVerified && <VerifiedIcon width={19} />}
+              <div className='icons'>
+                {isVerified && <VerifiedIcon width={19} />}
+
+              </div>
+
             </div>
             <div className="username">@{username || 'anonymous'}
             </div>
+
           </div>
+          <div className='iconn'>
+            <TwitterIcon />
+          </div>
+
         </div>
 
         <div className="tweet-content">
@@ -92,6 +112,13 @@ function Twt() {
               (tweet && tweetFormat(tweet)) ||
               'bu test yazisidir'
           }} ></p>
+          <p className='date'>
+            4:50 PM · Sep 29, 1890
+           <span className='infoo'>
+           Twitter for iPhone
+           </span>
+
+          </p>
         </div>
         <div className="tweet-stats">
           <span>
@@ -102,7 +129,7 @@ function Twt() {
             <b>{likes}</b> likes </span>
         </div>
         <div className="tweet-actions">
-          <button onClick={comment}>
+          <button id='ans' onClick={comment}>
             <ReplyIcon />
           </button>
           <button onClick={arrow}>
@@ -115,7 +142,42 @@ function Twt() {
             <ShareIcon />
           </button>
         </div>
+        <div className="tweet reply">
+          <div className="tweet-content">
+            <p >
+              <input id='rep' type="text" />
+            </p>
+            <p className='date'>
+            4:50 PM · Sep 29, 1890
+           <span className='infoo'>
+           Twitter for iPhone
+           </span>
 
+          </p>
+          </div>
+          <div className="tweet-stats">
+            <span>
+              <b>{retweets} </b> retweet </span>
+            <span>
+              <b>{quoteTweets} </b> quotations </span>
+            <span>
+              <b>{likes}</b> likes </span>
+          </div>
+          <div className="tweet-actions">
+            <button id='ans' onClick={comment}>
+              <ReplyIcon />
+            </button>
+            <button onClick={arrow}>
+              <RetweetIcon />
+            </button>
+            <button onClick={liked}>
+              <LikeIcon />
+            </button>
+            <button>
+              <ShareIcon />
+            </button>
+          </div>
+        </div>
       </div>
       <div className='tools'>
         <button className='edit' onClick={showContext}><Pen /></button>
@@ -123,6 +185,9 @@ function Twt() {
           <Save />
         </button>
         <button id='theme' onClick={toggleTheme}><Sun /></button>
+        <button id='answer2' onClick={replied}>
+          <ReplyIcon />
+        </button>
 
       </div>
       {isShown && (
@@ -144,12 +209,15 @@ function Twt() {
               </label>
             </li>
             <li>
-              <textarea name="" id="" cols="1" rows="1"
-                placeholder='I think...'
-                maxLength={50}
-                value={tweet}
-                onChange={e => setTweet(e.target.value)}
-              ></textarea>
+              <label htmlFor="">
+                I think
+                <textarea name="" id="" cols="1" rows="1"
+
+                  maxLength={50}
+                  value={tweet}
+                  onChange={e => setTweet(e.target.value)}
+                ></textarea>
+              </label>
             </li>
             <li key={1}>
               <label>Retweet
@@ -172,7 +240,7 @@ function Twt() {
               </label>
             </li>
             <li key={3}>
-              <label>Likelar
+              <label>Likes
                 <input
                   type="number"
                   className="input"

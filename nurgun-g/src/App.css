@@ -9,62 +9,92 @@
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-html, body {
+
+html,
+body {
   font-size: 10px;
   height: 100%;
- 
+  background-color: rgb(179, 201, 220) !important; 
+
 }
-.twitter{
+
+.twitter {
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 10rem;
 }
-.navbar{
+
+.navbar {
   width: 100vw;
   height: 10vh;
   font-size: 2rem;
-  
+
 }
-#ss{
+
+#ss {
   background-color: rgb(138, 138, 180);
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
-svg{
+svg {
   cursor: pointer;
 }
-svg:hover{
+
+svg:hover {
   fill: red;
 }
 
 #root {
   height: 100%;
- 
+
 }
-#theme{
- background-color: transparent;
+
+#theme {
+  background-color: transparent;
 }
-.tweet-container{
-  
+
+.tweet-container {
+
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  
+
   margin: auto;
-  
+
 
 }
-.tweet{
+
+.tweet {
   height: fit-content;
   border: 1px solid gray;
   width: 50vw;
   margin: 2.5rem auto;
   padding: 0 1.6rem;
-  
+
 }
-.tweet-author{
+#rep{
+  border:0;outline:0;
+
+}
+.hid{
+  display: block !important;
+}
+.reply{
+  display: none;
+  width: 90%;
+}
+.name svg{
+  fill: #1DA1F2;
+  width:50px
+}
+.iconn{
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+.tweet-author {
   height: 4.8rem;
   margin-top: 1.2rem;
   display: flex;
@@ -72,40 +102,47 @@ svg:hover{
   margin-bottom: 0.4rem;
   font-size: 1.5rem;
 }
-img{
+
+img {
   width: 4.8rem;
   margin-right: 1.2rem;
   border: 50%;
 }
-.name{
+
+.name {
   /* color: white; */
   font-weight: 70rem;
 }
-.username{
 
-  color:gray
+.username {
+
+  color: gray
 }
-.tweet-content{
+
+.tweet-content {
   padding-top: 1.2rem;
 }
-.tweet-content p{
-      font-size: 2.3rem;
-      line-height: 2.8rem;
-      /* color: #fff; */
-      overflow: hidden;
+
+.tweet-content p {
+  font-size: 2.3rem;
+  line-height: 2.8rem;
+  /* color: #fff; */
+  overflow: hidden;
 }
-.tweet-stats{
+
+.tweet-stats {
   height: 5.3rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    color: #6e767d;
-    border-top: 0.1rem solid #2f3336;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #6e767d;
+  border-top: 0.1rem solid #2f3336;
 }
 
 .tweet-stats span:not(:last-child) {
   margin-right: 2rem;
 }
+
 .tweet-actions {
   height: 4.8rem;
   display: flex;
@@ -114,20 +151,25 @@ img{
   align-items: center;
   justify-content: space-around;
 }
-.tweet-actions button{
+
+.tweet-actions button {
   background: transparent;
 }
-.name{
+
+.name {
   display: flex;
   align-items: center;
 }
-.name svg{
+
+.name svg {
   margin-left: 0.5rem;
 }
-.tweet-settings{
+
+.tweet-settings {
   padding: 0 1rem;
   /* color: white; */
 }
+
 label {
   display: block !important;
   font-size: 1.5rem;
@@ -135,24 +177,30 @@ label {
   display: block;
   color: #6e767d;
 }
+
 li:not(:last-child) {
   margin-bottom: 2rem;
 }
-h1{
+
+h1 {
   margin-bottom: 2rem;
 }
+
 input {
   width: 100%;
   background: transparent;
   border-bottom: 0.1rem solid #2f3336;
-  
+
   padding: 1rem 0 1.5rem;
   font-size: 1.5rem;
- 
+
 }
-input:focus,input:hover{
+
+input:focus,
+input:hover {
   border-color: #4e555a;
 }
+
 textarea {
   width: 100%;
   background: transparent;
@@ -164,107 +212,176 @@ textarea {
   resize: none;
 
 }
-textarea:focus{
+
+textarea:focus {
   border-color: #4e555a;
 }
-img{
+
+img {
   border-radius: 50%;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.light .tweet{
+
+.light .tweet {
   background: linear-gradient(96.27deg, #FFFFFF 15.49%, rgba(255, 255, 255, 0.78) 78.18%, rgba(255, 255, 255, 0.58) 100%);
 border: 1px solid #FFFFFF;
 backdrop-filter: blur(2px);
 }
-.navbar-nav{
+
+.navbar-nav {
   align-items: center;
   gap: 10rem;
 }
-.tweet{
+#answer2{
+  background-color: transparent ;
+}
+.tweet {
   border-radius: 2rem;
 }
-.dark .tweet{
+
+.dark .tweet {
   background: linear-gradient(276.34deg, rgba(0, 0, 0, 0.73) 14.69%, rgba(0, 0, 0, 0.57) 77.97%, rgba(0, 0, 0, 0.43) 100%);
-border: 1px solid #FFFFFF;
-backdrop-filter: blur(2px);
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(2px);
 }
-.dark .tweet-stats span{
+
+.dark .tweet-stats span {
   color: #fff;
 }
-.dark svg{
+
+.dark svg {
   fill: white;
 }
-.dark svg:hover{
+
+.dark svg:hover {
   fill: red;
 }
 
-.dark label{
+.dark label {
   color: black;
 }
-.tweet-content button{
-  
+
+.tweet-content button {
+
   color: rgb(116, 116, 191);
 }
-#sub{
+
+#sub {
   background-color: #5598d3;
   padding: 1rem 2rem;
 }
-#sub p{
-  text-orientation:upright;
+
+#sub p {
+  text-orientation: upright;
 }
 
 .dark {
-  
+
   color: #fff !important;
- }
- .dark input{
+}
+
+.dark input {
   color: white !important;
- }
- .dark textarea{
-  color: white;
- }
- .light {
-  
+}
+
+.dark textarea{
+  color: white ;
+}
+
+.light {
+
   color: black !important;
- }
-.edit{
-  background-color:transparent;
+}
+
+.edit {
+  background-color: transparent;
   border-radius: 2rem;
   color: gray;
   font-size: 2rem;
- }
- #basic-navbar-nav > div > a{
+}
+
+#basic-navbar-nav>div>a {
   color: white;
   font-weight: bold;
- }
+}
 
-#root > div > div > button:nth-child(3){
+#root>div>div>button:nth-child(3) {
   height: 5rem;
 }
-button{
-  font-size: 2rem;
+.navbar{
+  background-color: black;
 }
-h1{
-  padding: 20px;
-}
-.dark .tweet-stats{
-  color: black;
-}
-.light .tweet{
-  border: 1px solid gray;
-}
-.tweet-content .xt{
-  color: rebeccapurple !important;
-}
-#save{
-  background-color: transparent;
+.tweet-content span {
+  color: rgb(59, 141, 163);
+  cursor: pointer;
 }
 .tools{
+  padding: 2rem;
+}
+button {
+  font-size: 2rem;
+}
+
+h1 {
+  padding: 20px;
+}
+
+.dark .tweet-stats {
+  color: black;
+}
+
+.light .tweet {
+  border: 1px solid gray;
+}
+
+#save {
+  background-color: transparent;
+}
+
+.tools {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+}
+.tweet-settings{
+  border-radius: 2rem;
+}
+
+.dark .tweet-settings {
+  background-color: transparent;
+    /* background: linear-gradient(276.34deg, rgba(27, 85, 100, 0.73) 14.69%, rgba(64, 72, 179, 0.57) 77.97%, rgba(0, 0, 0, 0.43) 100%); */
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(2px);
+}
+.date{
+  color: #8E8E8E !important;
+  padding: 1rem 0;
+  
+}
+.date span{
+  color: #2AA3EF;
+  padding: 0 1rem;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .tweet-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+  .tweet{
+    width: 100%;
+  }
+  .iconn{
+    width: 30% !important;
+  }
+  
+  
 }

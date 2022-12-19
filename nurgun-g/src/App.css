@@ -265,7 +265,11 @@ backdrop-filter: blur(2px);
 .dark label {
   color: black;
 }
-
+.light .tweet-settings{
+  background: linear-gradient(96.27deg, #FFFFFF 15.49%, rgba(255, 255, 255, 0.78) 78.18%, rgba(255, 255, 255, 0.58) 100%);
+border: 1px solid #FFFFFF;
+backdrop-filter: blur(2px);
+}
 .tweet-content button {
 
   color: rgb(116, 116, 191);

@@ -35,11 +35,11 @@ function Twt() {
 
 
   }
-  let reply = (event) => {
-    let toadd2 = document.querySelector('.tweet');
-    let toadd = document.querySelector('.tweet');
-    toadd2.append(toadd)
-  }
+  // let reply = (event) => {
+  //   let toadd2 = document.querySelector('.tweet');
+  //   let toadd = document.querySelector('.tweet');
+  //   toadd2.append(toadd)
+  // }
   let arrow = (event) => {
     setRetweets(Number(retweets) == 0 && Number(retweets) + 1)
   }
